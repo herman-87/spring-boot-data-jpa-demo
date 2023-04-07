@@ -1,6 +1,7 @@
 package com.herman87.spring.data.jpa.demo.domain;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,6 +17,7 @@ import javax.persistence.UniqueConstraint;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Data
 @Table(
         name = "t_student",
