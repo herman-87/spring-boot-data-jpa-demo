@@ -29,7 +29,9 @@ public class CourseMaterial {
     private String url;
     @OneToOne(
             cascade = CascadeType.PERSIST,
-            fetch = FetchType.LAZY
+            fetch = FetchType.LAZY,
+            //to say the course is required when we want to persist a course
+            optional = false
     )
     @JoinColumn(
             name = "c_course",

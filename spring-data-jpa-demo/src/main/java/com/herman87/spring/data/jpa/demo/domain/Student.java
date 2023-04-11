@@ -1,9 +1,6 @@
 package com.herman87.spring.data.jpa.demo.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -11,7 +8,8 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Data
+@Getter
+@Setter
 @Table(
         name = "t_student",
         uniqueConstraints = @UniqueConstraint(
@@ -30,8 +28,11 @@ public class Student {
             strategy = GenerationType.SEQUENCE,
             generator = "student_sequence"
     )
+    @Column(name = "c_id")
     private Long id;
+    @Column(name = "c_firstname")
     private String firstname;
+    @Column(name = "c_lastname")
     private String lastname;
     @Column(name = "c_email", nullable = false)
     private String email;
